@@ -36,6 +36,11 @@ public class Card {
         this.cardFront = cardFront;
         this.cardBack = cardBack;
     }
+
+    @Override
+    public String toString() {
+        return "Card [cardBack=" + cardBack + ", cardFront=" + cardFront + "]";
+    }
     
     
 }

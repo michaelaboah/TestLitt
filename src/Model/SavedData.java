@@ -40,16 +40,16 @@ public class SavedData{
 
     public static void readAll(String filePath){
         SavedData retrieved = (SavedData) JsonUtil.readJson(filePath, new SavedData());
-        MainData.setCards(retrieved.getCards());
-        MainData.setUsers(retrieved.getUsers());
+        MainData.setCardsList(retrieved.getCards());
+        MainData.setUserList(retrieved.getUsers());
         System.out.println(retrieved);
     }
 
 
     public static void saveAll(String filepath){
         var save = new SavedData();
-        save.setCards(MainData.getCards());
-        save.setUsers(MainData.getUsers());
+        save.setCards(MainData.getCardsList());
+        save.setUsers(MainData.getUserList());
         //Copy whats above if things need to be added
         JsonUtil.writeJson(filepath, save);
     }
