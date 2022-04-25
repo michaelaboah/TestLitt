@@ -39,7 +39,9 @@ public class Card {
 
     @Override
     public String toString() {
-        return "Card [cardBack=" + cardBack + ", cardFront=" + cardFront + "]";
+        //return "Card [cardBack=" + cardBack + ", cardFront=" + cardFront + "]";
+       
+        return cardFront + "," + cardBack;
     }
     
     
