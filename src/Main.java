@@ -17,8 +17,6 @@ import utility.MainData;
 
 
 public class Main {
-    
-    loginController loginCntl;
         
     public static void main(String[] args) {
        

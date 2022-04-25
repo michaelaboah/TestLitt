@@ -3,6 +3,7 @@ package Controller;
 
 import View.studentMenu;
 import View.cardMenu;
+import View.matchingGameMenu;
 
 
 
@@ -34,5 +35,14 @@ public class studentController {
     public void setStudentMenu(studentMenu studentMenu) {
         this.studentMenu = studentMenu;
     }
-
+    
+    public void viewMGM() {
+        System.out.print("Button 2 Pressed!");
+        // cardMenu goblin = new cardMenu();
+        // this.studentMenu.setVisible(true);
+        studentMenu.dispose();
+        new matchingGameMenu().setVisible(true);
+        matchingGameController MGM = new matchingGameController();
+        // this.Close();
+    }
 }
