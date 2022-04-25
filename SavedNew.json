@@ -1,0 +1,48 @@
+{
+  "cards": [
+    {
+      "cardFront": "What is Biology?",
+      "cardBack": "Study of the physical and natural world through observation and experiment"
+    },
+    {
+      "cardFront": "What is Science?",
+      "cardBack": "Deals with living organisms"
+    }
+  ],
+  "users": [
+    {
+      "username": "Mister",
+      "password": "Java"
+    },
+    {
+      "username": "Miss",
+      "password": "Java1"
+    },
+    {
+      "username": "Misses",
+      "password": "Java2"
+    },
+    {
+      "username": "Sir",
+      "password": "Java3"
+    }
+  ],
+  "teachers": [
+    {
+      "teacherUsername": "Javateacher",
+      "teacherPassword": "Java12"
+    },
+    {
+      "teacherUsername": "Bioteacher",
+      "teacherPassword": "Java123"
+    },
+    {
+      "teacherUsername": "Historyteacher",
+      "teacherPassword": "Java1234"
+    },
+    {
+      "teacherUsername": "Scienceteacher",
+      "teacherPassword": "Java12345"
+    }
+  ]
+}

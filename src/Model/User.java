@@ -3,14 +3,10 @@ package Model;
 
 public class User {
     
-    String username;
-    String password;
+    private String username;
+    private String password;
 
-
-    
     public User(){
-        username = "";
-        password = "";      
     }
     
     public User(String username, String password){

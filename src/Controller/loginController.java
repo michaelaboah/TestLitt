@@ -1,9 +1,10 @@
 package Controller;
 
 import View.loginScreen;
+import utility.MainData;
+import Model.Teacher;
 //import View.studentMenu;
 import Model.User;
-import Model.UserList;
 //import Controller.studentController;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -13,51 +14,24 @@ import java.awt.event.ActionListener;
 
 public class loginController {
     
-    public User user;
-    public ArrayList <User> users;
+
     public loginScreen loginScreen;
     public int i;
-    public boolean isValidated;
+
     //studentMenu studentMenu = new studentMenu();
     //studentController studentctrl;
     
     public loginController(){
-        
-        this.user = new Model.User();
-        UserList userList = new Model.UserList();
-        this.users = new ArrayList<User>();
-        this.users = userList.getUsers();
-       
         this.loginScreen = new View.loginScreen();
         loginScreen.setVisible(true);
         validate();
-        
     }
 
-    public User getUser() {
-        return user;
-    }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
 
-    public ArrayList<User> getUsers() {
-        return users;
+    public void loginopen(){
+        loginScreen.setVisible(true);
     }
-
-    public void setUsers(ArrayList<User> users) {
-        this.users = users;
-    }
-
-    public loginScreen getLoginScreen() {
-        return loginScreen;
-    }
-
-    public void setLoginScreen(loginScreen loginScreen) {
-        this.loginScreen = loginScreen;
-    }
-    
     //search list of the username & password then it will take you to next screen
     public void validate(){
      
@@ -66,16 +40,21 @@ public class loginController {
             @Override
             public void actionPerformed(ActionEvent e) {
                
-                String user = loginScreen.getUserBox().getText();
+                String userName = loginScreen.getUserBox().getText();
                 String password = loginScreen.getjPasswordField1().getText();
 
-                for (int i = 0; i < UserList.getUsers().size(); i++) {
+                for (int i = 0; i < MainData.getUserList().size(); i++) {
 
-                    if(UserList.getUsers().get(i).getUsername().equals(user) && UserList.getUsers().get(i).getPassword().equals(password)){
+                    if(MainData.getUserList().get(i).getUsername().equals(userName) && MainData.getUserList().get(i).getPassword().equals(password)){
                         //System.out.println("Login Approved");
                         loginScreen.dispose();
                         //studentMenu.setVisible(true);
                         studentController studentctrl = new studentController();
+                    }
+
+                    if (MainData.getTeachers().get(i).getTeacherUsername().equals(userName) && MainData.getTeachers().get(i).getTeacherPassword().equals(password)){
+                        loginScreen.dispose();
+                        teacherController teacherctrl = new teacherController();
                     }
 
                     else{
@@ -86,9 +65,11 @@ public class loginController {
                 }
                
                 
-                }
             }
-        );    
+        }
+    );    
          
-    }
+}
+
+
 }

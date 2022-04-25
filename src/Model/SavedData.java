@@ -9,8 +9,10 @@ public class SavedData{
 
     private ArrayList<Card> cards = new ArrayList<>();
     private ArrayList<User> users = new ArrayList<>();
-
+    private ArrayList<Teacher> teachers = new ArrayList<>();
    
+
+
     public ArrayList<Card> getCards() {
         return cards;
     }
@@ -30,11 +32,19 @@ public class SavedData{
         this.users = users;
     }
 
-    
+    public ArrayList<Teacher> getTeachers() {
+        return teachers;
+    }
+
+
+    public void setTeachers(ArrayList<Teacher> teachers) {
+        this.teachers = teachers;
+    }
+
 
     @Override
     public String toString() {
-        return "SavedData [cards=" + cards + ", users=" + users + "]";
+        return "SavedData [cards=" + cards + ", teachers=" + teachers + ", users=" + users + "]";
     }
 
 
@@ -42,6 +52,7 @@ public class SavedData{
         SavedData retrieved = (SavedData) JsonUtil.readJson(filePath, new SavedData());
         MainData.setCardsList(retrieved.getCards());
         MainData.setUserList(retrieved.getUsers());
+        MainData.setTeachers(retrieved.getTeachers());
         System.out.println(retrieved);
     }
 
@@ -50,6 +61,7 @@ public class SavedData{
         var save = new SavedData();
         save.setCards(MainData.getCardsList());
         save.setUsers(MainData.getUserList());
+        save.setTeachers(MainData.getTeachers());
         //Copy whats above if things need to be added
         JsonUtil.writeJson(filepath, save);
     }

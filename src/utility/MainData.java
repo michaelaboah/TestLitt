@@ -8,7 +8,16 @@ public class MainData {
 
     private static ArrayList<Card> cardsList = new ArrayList<>();
     private static ArrayList<User> userList = new ArrayList<>();
+    private static ArrayList<Teacher> teachers = new ArrayList<>();
 
+
+    public static ArrayList<Teacher> getTeachers() {
+        return teachers;
+    }
+
+    public static void setTeachers(ArrayList<Teacher> teachers) {
+        MainData.teachers = teachers;
+    }
 
     public static ArrayList<Card> getCardsList() {
         return cardsList;
